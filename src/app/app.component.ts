@@ -7,18 +7,19 @@ import { Loader } from '@googlemaps/js-api-loader';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit{
   title = 'gmaps';
 
 
   ngOnInit(): void{
     let loader = new Loader({
-      apiKey: 'AIzaSyDygsikUrcCdqSQ41E4MJFKBylBwXD9Vok'
+      apiKey: 'AIzaSyDMf_pTa9KElHEg5tlJy3evKaaAVdwJRFc'
     })
 
     loader.load().then(() => {
       new google.maps.Map(document.getElementById("map")!,{
-        center: { lat: 40.463667, lng: -3.74922 },
+        center: { lat: 41.395639, lng: 2.1922392 },
         zoom: 6
       })
     })

@@ -3,7 +3,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
- /*    "skipLibCheck": true, */
+    "skipLibCheck": true, 
     "types": ["google.maps"]
   },
   "files": [
