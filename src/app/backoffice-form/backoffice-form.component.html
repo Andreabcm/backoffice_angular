@@ -1,4 +1,8 @@
 <div class="form-group">
+    <input type="text" class="form-control" id="username"
+    required
+    [(ngModel)]="model.username" name="username">
+
     <label for="gender">Gender</label>
     <select class="form-control" id="gender" required>
       <option *ngFor="let pow of genders" [value]="pow">{{pow}}</option>
