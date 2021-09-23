@@ -9,7 +9,7 @@ import { Backoffice } from '../backoffice';
 export class BackofficeFormComponent {
 
     genders = [ 'Male', 'Female' ];
-    model = new Backoffice(18, 'Dr IQ', this.genders[0], 'Chuck Overstreet');
+    model = new Backoffice(18, 'username', 'email', this.genders[2]);
     submitted = false;
 
     onSubmit() { this.submitted = true; }
