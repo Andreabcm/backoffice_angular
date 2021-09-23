@@ -3,8 +3,7 @@ import { Backoffice } from '../backoffice';
 
 @Component({
     selector: 'app-backoffice-form',
-    templateUrl: './backoffice-form.component.html',
-    styleUrls: [ './backoofice-form.component.css' ]
+    templateUrl: './backoffice-form.component.html'
 })
 
 export class BackofficeFormComponent {
