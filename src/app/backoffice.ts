@@ -7,8 +7,7 @@ export class Backoffice {
         public email: string,
         public gender: string,
         public bio: string, 
-        
-        
+            
     ) {  }
 
 }

@@ -4,7 +4,6 @@
     <div class="form-group">
         <label for="username">Image</label>
         <input type="file"
-        required
         [(ngModel)]="model.image" name="image">
     </div>
     
@@ -34,7 +33,6 @@
     <div class="form-group">
         <label for="gender">Gender</label>
         <select class="form-control" id="gender" 
-        required
         [(ngModel)]="model.gender" name="gender">
         <option *ngFor="let pow of genders" [value]="pow">{{pow}}</option>
         </select>
@@ -43,7 +41,6 @@
     <div class="form-group">
         <label for="bio">Bio</label>
         <input type="text"  class="form-control" id="bio"
-        required
         [(ngModel)]="model.bio" name="bio">
     </div> 
 

@@ -4,7 +4,6 @@ import { Backoffice } from '../backoffice';
 @Component({
     selector: 'app-backoffice-form',
     templateUrl: './backoffice-form.component.html',
-   /*  styleUrls: ['./backoffice-form.component.css'] */
 })
 
 export class BackofficeFormComponent {
@@ -16,14 +15,4 @@ export class BackofficeFormComponent {
     onSubmit() { this.submitted = true; }
 
     newBackoffice() { this.model = new Backoffice(42, '', '', '', '', '');}
-
-/*     jonSnow(): Backoffice {
-        const myCharacter =  new Backoffice(42, 'Jon Snow',
-                                    'jon.snow@westeros.com',
-                                    'Male',
-                                    'King of the North');
-        console.log('My hero is called ' + Backoffice.name); // "My character is called Jon Snow"
-        return myCharacter;
-    }
- */
 }
