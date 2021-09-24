@@ -4,6 +4,7 @@ import { Backoffice } from '../backoffice';
 @Component({
     selector: 'app-backoffice-form',
     templateUrl: './backoffice-form.component.html',
+    styleUrls: ['./backoffice-form.component.css']
 })
 
 export class BackofficeFormComponent {

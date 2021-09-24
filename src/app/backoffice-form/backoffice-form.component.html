@@ -1,76 +1,76 @@
-<div class="container">
-<div [hidden]="submitted">
-<form (ngSubmit)="onSubmit()" #heroForm="ngForm" >
-    <div class="form-group">
-        <label for="username">Image</label>
-        <input type="file"
-        [(ngModel)]="model.image" name="image">
-    </div>
-    
-    <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" class="form-control" id="username"
-            required
-            [(ngModel)]="model.username" name="username"
-            #name="ngModel">
-        <div [hidden]="name.valid || name.pristine"
-            class="alert alert-danger">
-            Username is required
+<div class="container mt-4 shadow-lg">
+    <div [hidden]="submitted">
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+        <div class="form-group col-md-6">
+            <label for="username">Image</label>
+            <br>
+            <input type="file" class="form-control"
+            [(ngModel)]="model.image" name="image" >
+        </div>
+        <br>
+        <div class="form-group col-md-6">
+            <label for="username">Username</label>
+            <input type="text" class="form-control"  id="username"
+                required
+                [(ngModel)]="model.username" name="username"
+                #name="ngModel">
+            <div [hidden]="name.valid || name.pristine"
+                class="alert alert-danger">
+                Username is required
+            </div>    
         </div>    
-    </div>    
-
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input type="text"  class="form-control" id="email"
-            required
-            [(ngModel)]="model.email" name="email">
-        <div [hidden]="name.valid || name.pristine"
-            class="alert alert-danger">
-            Email is required
+        <br>
+        <div class="form-group col-md-6">
+            <label for="email">Email</label>
+            <input type="text"  class="form-control" id="email"
+                required
+                [(ngModel)]="model.email" name="email">
+            <div [hidden]="name.valid || name.pristine"
+                class="alert alert-danger">
+                Email is required
+            </div> 
+        </div>
+        <br>
+        <div class="form-group col-md-6">
+            <label for="gender">Gender</label>
+            <select class="form-control" id="gender" 
+            [(ngModel)]="model.gender" name="gender">
+            <option *ngFor="let pow of genders" [value]="pow">{{pow}}</option>
+            </select>
+        </div>
+        <br>
+        <div class="form-group col-md-6">
+            <label for="bio">Bio</label>
+            <input type="text"  class="form-control" id="bio"
+            [(ngModel)]="model.bio" name="bio">
         </div> 
+        <br>
+        <button type="submit" class="btn btn-danger" [disabled]="!heroForm.form.valid">Save</button>
+    </form> 
     </div>
 
-    <div class="form-group">
-        <label for="gender">Gender</label>
-        <select class="form-control" id="gender" 
-        [(ngModel)]="model.gender" name="gender">
-        <option *ngFor="let pow of genders" [value]="pow">{{pow}}</option>
-        </select>
+    <div [hidden]="!submitted">
+        <h2>You sabed the following:</h2>
+        <div class="row">
+            <div class="col-xs-3">IMAGE</div>
+            <div class="col-xs-9">{{ model.image}}</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">USERNAME</div>
+            <div class="col-xs-9">{{ model.username }}</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">EMAIL</div>
+            <div class="col-xs-9">{{ model.email }}</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">GENDER</div>
+            <div class="col-xs-9">{{ model.gender }}</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">BIO</div>
+            <div class="col-xs-9">{{ model.bio }}</div>
+        </div>
+        <button class="btn btn-danger " (click)="submitted=false">Edit</button>
     </div>
-
-    <div class="form-group">
-        <label for="bio">Bio</label>
-        <input type="text"  class="form-control" id="bio"
-        [(ngModel)]="model.bio" name="bio">
-    </div> 
-
-    <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Save</button>
-</form> 
-</div>
-
-<div [hidden]="!submitted">
-    <h2>You sabed the following:</h2>
-    <div class="row">
-        <div class="col-xs-3">IMAGE</div>
-        <div class="col-xs-9">{{ model.image}}</div>
-    </div>
-    <div class="row">
-        <div class="col-xs-3">USERNAME</div>
-        <div class="col-xs-9">{{ model.username }}</div>
-    </div>
-    <div class="row">
-        <div class="col-xs-3">EMAIL</div>
-        <div class="col-xs-9">{{ model.email }}</div>
-    </div>
-    <div class="row">
-        <div class="col-xs-3">GENDER</div>
-        <div class="col-xs-9">{{ model.gender }}</div>
-    </div>
-    <div class="row">
-        <div class="col-xs-3">BIO</div>
-        <div class="col-xs-9">{{ model.bio }}</div>
-    </div>
-    <br>
-    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
-</div>
 </div>
