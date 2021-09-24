@@ -1,6 +1,6 @@
 
-
-<form #characterForm="ngForm">
+<div [hidden]="submitted">
+<form (ngSubmit)="onSubmit()" #heroForm="ngForm">
     <div class="form-group">
         <label for="username">Username</label>
         <input type="text" class="form-control" id="username"
@@ -39,4 +39,8 @@
         required
         [(ngModel)]="model.bio" name="bio">
     </div> 
-</form>    
+
+    <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Save</button>
+</form> 
+</div>
+
