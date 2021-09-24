@@ -10,12 +10,12 @@ import { Backoffice } from '../backoffice';
 export class BackofficeFormComponent {
 
     genders = [ 'Male', 'Female' ];
-    model = new Backoffice(18, 'username', 'email', this.genders[2], 'bio');
+    model = new Backoffice(18,'', '', '', this.genders[2], '');
     submitted = false;
 
     onSubmit() { this.submitted = true; }
 
-    newBackoffice() { this.model = new Backoffice(42, '', '', '', '');}
+    newBackoffice() { this.model = new Backoffice(42, '', '', '', '', '');}
 
 /*     jonSnow(): Backoffice {
         const myCharacter =  new Backoffice(42, 'Jon Snow',
