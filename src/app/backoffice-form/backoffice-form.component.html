@@ -1,4 +1,4 @@
-
+<div class="container">
 <div [hidden]="submitted">
 <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
     <div class="form-group">
@@ -44,3 +44,25 @@
 </form> 
 </div>
 
+<div [hidden]="!submitted">
+    <h2>You sabed the following:</h2>
+    <div class="row">
+        <div class="col-xs-3">Username</div>
+        <div class="col-xs-9">{{ model.username }}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">Email</div>
+        <div class="col-xs-9">{{ model.email }}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">Gender</div>
+        <div class="col-xs-9">{{ model.gender }}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">Bio</div>
+        <div class="col-xs-9">{{ model.bio }}</div>
+    </div>
+    <br>
+    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+</div>
+</div>
