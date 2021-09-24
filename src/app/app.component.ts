@@ -30,19 +30,34 @@ export class AppComponent implements OnInit{
       apiKey: 'AIzaSyA7LDWSlBJ_nnEGSh7oN99IHKPyR5k4nWc'
     })
 
-    const position = { lat: 50.395639, lng: 1.1922392}
 
     loader.load().then(() => {
       const map = new google.maps.Map(document.getElementById("map")!,{
-        center: { lat: 50.395639, lng: 1.1922392 },
+        center: { lat: 41.4039200, lng: 2.2041300},
         zoom: 6
     })
     
-    new google.maps.Marker({ position: position, map, title:'myposition'
+    const position = { lat: 41.4039200, lng: 2.2041300}
+    const contentString = "<p><b> Latitude </b> 41.4039200</p>" + "<p><b> Longitude </b> 2.2041300</p>"
+
+
+    const infoWindow = new google.maps.InfoWindow({
+      content: contentString,
+    });
+    
+    const marker = new google.maps.Marker({ position: position, map, title:'myposition'
     })
 
+    marker.addListener("click", () => {
+      infoWindow.open({
+        anchor: marker,
+        map,
+        shouldFocus: false,
+      });
+    });
+
     })
-    
+
 
   }
 
