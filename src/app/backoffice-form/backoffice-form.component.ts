@@ -9,17 +9,18 @@ import { Backoffice } from '../backoffice';
 export class BackofficeFormComponent {
 
     genders = [ 'Male', 'Female' ];
-    model = new Backoffice(18, 'username', 'email', this.genders[2]);
+    model = new Backoffice(18, 'username', 'email', this.genders[2], 'bio');
     submitted = false;
 
     onSubmit() { this.submitted = true; }
 
-    newBackoffice() { this.model = new Backoffice(42, '', '', '');}
+    newBackoffice() { this.model = new Backoffice(42, '', '', '', '');}
 
     jonSnow(): Backoffice {
         const myHero =  new Backoffice(42, 'Jon Snow',
                                     'jon.snow@westeros.com',
-                                    'Male');
+                                    'Male',
+                                    'King of the North');
         console.log('My hero is called ' + Backoffice.name); // "My character is called Jon Snow"
         return myHero;
     }

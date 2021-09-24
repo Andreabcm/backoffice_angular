@@ -14,13 +14,17 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void{
     let loader = new Loader({
-      apiKey: 'AIzaSyDMf_pTa9KElHEg5tlJy3evKaaAVdwJRFc'
+      apiKey: 'AIzaSyA7LDWSlBJ_nnEGSh7oN99IHKPyR5k4nWc'
     })
 
+    const position = { lat: 50.395639, lng: 1.1922392}
+
     loader.load().then(() => {
-      new google.maps.Map(document.getElementById("map")!,{
-        center: { lat: 41.395639, lng: 2.1922392 },
+      const map = new google.maps.Map(document.getElementById("map")!,{
+        center: { lat: 50.395639, lng: 1.1922392 },
         zoom: 6
+      })
+      new google.maps.Marker({ position: position, map, title:'myposition'
       })
     })
 
